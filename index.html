@@ -1,44 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- 🌐 META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon | Aventra</title>
+  <title>Aventra Bot | Automation Reimagined</title>
+  <meta name="description" content="Aventra Bot — sleek automation for modern communities. Manage, innovate, and grow with precision.">
+  <meta name="theme-color" content="#3B82F6">
+
+  <!-- 🧭 SEO + Embed -->
+  <meta property="og:title" content="Aventra Bot" />
+  <meta property="og:description" content="Powerful automation. Seamless performance. Built for creators." />
+  <meta property="og:image" content="https://cdn.aventra.xyz/assets/logo.png" />
+  <meta property="og:url" content="https://aventrabot.xyz/" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cdn.aventra.xyz/assets/banner.png">
+  <meta name="twitter:title" content="Aventra Bot" />
+  <meta name="twitter:description" content="Your modern Discord automation companion." />
+
+  <!-- 🧩 Favicon -->
+  <link rel="icon" href="https://cdn.aventra.xyz/assets/favicon.ico" type="image/x-icon" />
+
+  <!-- 🎨 Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✨ Styles -->
   <style>
-    * {
-      box-sizing: border-box;
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: linear-gradient(135deg, #111, #222);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+    .animate-fadeUp { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+    .animate-fadeUp.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
+    .glow-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(59,130,246,0.7); }
+    .bg-glow {
+      position: absolute; border-radius: 9999px; filter: blur(90px);
+      opacity: 0.25; animation: float 10s ease-in-out infinite;
     }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.2rem;
-      color: #aaa;
-    }
-    footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 0.9rem;
-      color: #666;
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
     }
   </style>
 </head>
-<body>
-  <h1>🚧 Coming Soon 🚧</h1>
-  <p>We’re building something amazing at Aventra.</p>
-  <footer>© 2025 Aventra</footer>
+
+<body class="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-100 font-sans relative overflow-x-hidden">
+
+  <!-- 💡 Ambient Glow -->
+  <div class="bg-glow w-[30rem] h-[30rem] bg-blue-600 top-20 left-10"></div>
+  <div class="bg-glow w-[25rem] h-[25rem] bg-purple-700 bottom-10 right-20"></div>
+
+  <!-- 🧭 Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="https://cdn.aventra.xyz/assets/logo.png"
+             alt="Aventra Logo"
+             class="h-10 w-10 rounded-full object-cover">
+        <h1 class="text-xl font-bold text-blue-400">Aventra</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-gray-300 text-sm font-medium">
+        <a href="#hero" class="hover:text-blue-400 transition">Home</a>
+        <a href="#features" class="hover:text-blue-400 transition">Features</a>
+        <a href="#community" class="hover:text-blue-400 transition">Community</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🚀 Hero -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-950 to-gray-900 relative">
+    <div class="max-w-3xl mx-auto px-6 animate-fadeUp">
+      <h1 class="text-6xl font-extrabold mb-6 text-blue-400 drop-shadow-lg">Meet Aventra</h1>
+      <p class="text-lg text-gray-300 mb-10 leading-relaxed">The next evolution in Discord automation — built for creators, gamers, and innovators who demand speed and precision.</p>
+      <a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot"
+         class="bg-blue-600 text-white px-10 py-4 rounded-full font-semibold shadow-lg transition-all glow-btn">
+        ⚡ Invite Aventra
+      </a>
+    </div>
+  </section>
+
+  <!-- ⚙️ Features -->
+  <section id="features" class="py-32 bg-gray-900 text-center relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold mb-16 text-blue-400 animate-fadeUp">Core Features</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="p-8 bg-gray-800/60 backdrop-blur-md rounded-2xl border border-gray-700 hover:border-blue-500 transition animate-fadeUp">
+          <h3 class="text-2xl font-semibold mb-3 text-blue-400">⚙️ Smart Automation</h3>
+          <p class="text-gray-400">Automate roles, moderation, and commands with intelligent logic.</p>
+        </div>
+        <div class="p-8 bg-gray-800/60 backdrop-blur-md rounded-2xl border border-gray-700 hover:border-blue-500 transition animate-fadeUp">
+          <h3 class="text-2xl font-semibold mb-3 text-blue-400">💬 Dynamic Responses</h3>
+          <p class="text-gray-400">Custom replies and interactions tailored to your server’s vibe.</p>
+        </div>
+        <div class="p-8 bg-gray-800/60 backdrop-blur-md rounded-2xl border border-gray-700 hover:border-blue-500 transition animate-fadeUp">
+          <h3 class="text-2xl font-semibold mb-3 text-blue-400">🚀 Lightning Fast</h3>
+          <p class="text-gray-400">Low-latency performance and always-on reliability for any scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌍 Community -->
+  <section id="community" class="py-32 bg-gradient-to-b from-blue-900 to-indigo-800 text-center relative">
+    <div class="max-w-4xl mx-auto px-6 animate-fadeUp">
+      <h2 class="text-4xl font-bold mb-6 text-blue-100">Join the Aventra Network</h2>
+      <p class="text-blue-200 mb-10 text-lg">Connect with other innovators, share automation ideas, and get early feature access.</p>
+      <a href="https://discord.gg/pvbMNSX3"
+         class="bg-white text-blue-700 px-10 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition-all">
+        💠 Join Our Discord
+      </a>
+    </div>
+  </section>
+
+  <!-- 📬 Contact -->
+  <section id="contact" class="py-28 bg-gray-900 text-center">
+    <div class="max-w-3xl mx-auto px-6 animate-fadeUp">
+      <h2 class="text-4xl font-bold mb-4 text-blue-400">Let’s Connect</h2>
+      <p class="text-gray-400 mb-8">Business inquiries, partnerships, or collaborations — reach out anytime.</p>
+      <a href="mailto:contact@aventrabot.xyz"
+         class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-500 hover:scale-105 transition-all">
+        ✉️ contact@aventrabot.xyz
+      </a>
+    </div>
+  </section>
+
+  <!-- 🧾 Footer -->
+  <footer class="bg-gray-950 py-6 text-center text-gray-400 text-sm border-t border-gray-800">
+    <p>Made with ❤️ by Aventra Labs | © 2025 Aventra</p>
+  </footer>
+
+  <!-- 🪄 Scroll Reveal -->
+  <script>
+    const els = document.querySelectorAll('.animate-fadeUp');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    els.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
